@@ -18,7 +18,7 @@ use Endroid\QrCode\Writer\Result\GdResult;
 use Endroid\QrCode\Writer\Result\ResultInterface;
 use Zxing\QrReader;
 
-abstract readonly class AbstractGdWriter implements WriterInterface, ValidatingWriterInterface
+abstract class AbstractGdWriter implements WriterInterface, ValidatingWriterInterface
 {
     protected function getMatrix(QrCodeInterface $qrCode): MatrixInterface
     {
