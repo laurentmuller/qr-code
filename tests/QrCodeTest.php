@@ -216,7 +216,7 @@ final class QrCodeTest extends TestCase
         $this->assertInstanceOf(SvgResult::class, $result);
 
         $pngWriter = new PngWriter();
-        $this->expectExceptionMessage('PNG Writer does not support SVG logo');
+        $this->expectExceptionMessage('GD Writer does not support SVG logo');
         $pngWriter->write($qrCode, $logo);
     }
 
