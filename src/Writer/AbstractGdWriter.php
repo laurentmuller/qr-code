@@ -13,7 +13,7 @@ use Endroid\QrCode\Writer\Result\ResultInterface;
 /**
  * @deprecated since 6.0, use GdWriter instead. This class will be removed in 7.0.
  */
-abstract class AbstractGdWriter implements WriterInterface, ValidatingWriterInterface
+abstract readonly class AbstractGdWriter implements WriterInterface, ValidatingWriterInterface
 {
     private GdWriter $gdWriter;
 
