@@ -18,7 +18,7 @@ use Endroid\QrCode\Writer\Result\GdResult;
 use Endroid\QrCode\Writer\Result\ResultInterface;
 use Zxing\QrReader;
 
-final readonly class GdWriter implements WriterInterface, ValidatingWriterInterface
+trait GdTrait
 {
     public function getMatrix(QrCodeInterface $qrCode): MatrixInterface
     {
@@ -27,7 +27,8 @@ final readonly class GdWriter implements WriterInterface, ValidatingWriterInterf
         return $matrixFactory->create($qrCode);
     }
 
-    public function write(QrCodeInterface $qrCode, ?LogoInterface $logo = null, ?LabelInterface $label = null, array $options = []): GdResult
+    /** @param array<string, mixed> $options */
+    public function writeGd(QrCodeInterface $qrCode, ?LogoInterface $logo = null, ?LabelInterface $label = null, array $options = []): GdResult
     {
         if (!extension_loaded('gd')) {
             throw new \Exception('Unable to generate image: please check if the GD extension is enabled and configured correctly');
